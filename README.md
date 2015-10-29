@@ -1,2 +1,2 @@
 # test-automation-tools
-Support repository for presentation
+Support repository with examples
