@@ -1,0 +1,6 @@
+rootProject.name = 'examples'
+
+include 'junit-example',
+        'testng-example',
+        'spock-example',
+        'geb-example'

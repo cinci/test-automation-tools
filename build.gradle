@@ -1,0 +1,51 @@
+allprojects {
+    group 'test.automation'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+project(":junit-example") {
+    apply plugin: 'application'
+
+    mainClassName = "test.automation.Calculator"
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE'
+        compile 'org.springframework.boot:spring-boot-starter-test:1.2.4.RELEASE'
+        testCompile 'junit:junit:4.12'
+        testCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+        testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.48.2'
+    }
+}
+
+project(":testng-example") {
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE'
+        compile 'org.springframework.boot:spring-boot-starter-test:1.2.4.RELEASE'
+        testCompile 'org.testng:testng:6.9.9'
+        testCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+        testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.48.2'
+    }
+}
+
+project(":spock-example") {
+    dependencies {
+        testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
+        testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    }
+}
+
+project(":geb-example") {
+    dependencies {
+        testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
+        testCompile 'org.codehaus.geb:geb-core:0.7.2'
+    }
+}
