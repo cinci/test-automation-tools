@@ -39,13 +39,21 @@ project(":testng-example") {
 project(":spock-example") {
     dependencies {
         testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
-        testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+        testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+            exclude group: "org.codehaus.groovy"
+        }
     }
 }
 
 project(":geb-example") {
     dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web:1.2.4.RELEASE'
         testCompile 'org.codehaus.groovy:groovy-all:2.4.5'
-        testCompile 'org.codehaus.geb:geb-core:0.7.2'
+        testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+            exclude group: "org.codehaus.groovy"
+        }
+        testCompile 'org.gebish:geb-core:0.12.2'
+        testCompile 'org.gebish:geb-spock:0.12.2'
+        testCompile 'org.seleniumhq.selenium:selenium-firefox-driver:2.48.2'
     }
 }
