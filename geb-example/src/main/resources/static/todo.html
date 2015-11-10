@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>TODO page!</title>
+
+    <script>
+        function addItemToList() {
+            var ul = document.getElementsByClassName("my-todo-list")[0];
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(document.getElementsByClassName("new-item")[0].value));
+            ul.appendChild(li);
+        }
+    </script>
 </head>
 <body>
 <h3>TODO list:</h3>
@@ -13,5 +22,11 @@
     <li>d</li>
     <li>e</li>
 </ul>
+
+<form>
+    <input class="new-item" type="text"/>
+    <input type="button" value="Add" class="add-button" onclick="alert('adding...'); addItemToList();"/>
+</form>
+
 </body>
 </html>

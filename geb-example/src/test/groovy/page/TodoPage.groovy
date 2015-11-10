@@ -1,6 +1,7 @@
 package page
 
 import geb.Page
+import module.NewItemModule
 
 /**
  * Page object with relative url and more content components
@@ -16,6 +17,6 @@ class TodoPage extends Page {
         pageContent { $("body") }
         todoList { $(".my-todo-list > li") }
 
-        // TODO add some module example
+        newItem { module NewItemModule }
     }
 }
